@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alec.slotmachine.MainActivity">
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_pics"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/slot_one"
+            android:src="@drawable/greek"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/border"
+            android:layout_marginRight="20dp"
+            />
+
+        <ImageView
+            android:id="@+id/slot_two"
+            android:src="@drawable/tyler"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/border"/>
+
+        <ImageView
+            android:id="@+id/slot_three"
+            android:src="@drawable/asmongold"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/border"
+            android:layout_marginLeft="20dp"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_points"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_pics"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/points"
+        android:text="@string/points_label"
+        android:layout_below="@id/linear_pics"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/point_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="50sp" />
+
+
+    </LinearLayout>
+
+
+    <SeekBar
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_points"
+        android:paddingTop="10dp"
+        android:foregroundTint="#00FF00"
+        android:thumbTint="#0000ff"
+        android:max="2"/>
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_button"
+        android:layout_below="@id/bar"
+        android:layout_centerHorizontal="true"
+        android:onClick="buttonPressed"/>
+
+    <Button
+        android:id="@+id/rules_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rules_button"
+        android:layout_below="@id/start_button"
+        android:layout_centerHorizontal="true"
+        android:onClick="gotoRules"/>
+
+
+
+
+
+</RelativeLayout>

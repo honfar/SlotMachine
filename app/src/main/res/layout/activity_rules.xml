@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/da_rules_pic"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/darules"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/rules_details"
+        android:lines="4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/da_rules_pic"
+        android:layout_centerHorizontal="true"
+        android:text="Roll a Tyler and score +10 Points! \nRoll three of the same person and score +40 points! \nCURRENT POINTS:"/>
+
+
+
+    <TextView
+        android:id="@+id/rules_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rules_details"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:shadowColor="#0000FF"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="10"
+        android:text="0"
+        android:textSize="100sp" />
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Slot Machine</string>
+    <string name="points_label">Points:</string>
+    <string name="start_button">Start</string>
+    <string name="stop_button">Stop</string>
+    <string name="rules_button">Rules</string>
+    <string name="back_to_game">Back to Game</string>
+
+</resources>
