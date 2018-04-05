@@ -13,6 +13,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private int pointCount;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private Update2 update2;
     private Update3 update3;
     private int[] images = {R.drawable.asmongold, R.drawable.tyler, R.drawable.greek, R.drawable.boogie};
+    Random rand = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
         bar = findViewById(R.id.bar);
         start = findViewById(R.id.start_button);
         rules = findViewById(R.id.rules_button);
-        slot_one_speed = 3;
-        slot_two_speed = 3;
-        slot_three_speed = 3;
+        slot_one_speed=bar.getProgress()+1*rand.nextInt(3)+1;
+        slot_two_speed=bar.getProgress()+1*rand.nextInt(3)+1;
+        slot_three_speed=bar.getProgress()+1*rand.nextInt(3)+1;
         slot_one = findViewById(R.id.slot_one);
         slot_two = findViewById(R.id.slot_two);
         slot_three = findViewById(R.id.slot_three);
@@ -68,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        slot_one_speed=progress;
-                        slot_two_speed=progress;
-                        slot_three_speed=progress;
+                        slot_one_speed=progress+1*rand.nextInt(3)+1;
+                        slot_two_speed=progress+1*rand.nextInt(3)+1;
+                        slot_three_speed=progress+1*rand.nextInt(3)+1;
                     }
 
                     @Override
@@ -121,6 +124,9 @@ public class MainActivity extends AppCompatActivity {
             }
             points.setText(pointCount+"");
         } else {
+            slot_one_speed=bar.getProgress()+1*rand.nextInt(3)+1;
+            slot_two_speed=bar.getProgress()+1*rand.nextInt(3)+1;
+            slot_three_speed=bar.getProgress()+1*rand.nextInt(3)+1;
             handler.postDelayed(update, 1000);
             handler.postDelayed(update2, 1000);
             handler.postDelayed(update3, 1000);
@@ -143,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            handler.postDelayed(update, 100*(slot_one_speed+1));
+            handler.postDelayed(update, slot_one_speed*100);
 
 
         }
@@ -163,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-            handler.postDelayed(update2, 100*(slot_two_speed+5));
+            handler.postDelayed(update2, slot_two_speed*100);
 
         }
     }
@@ -181,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-            handler.postDelayed(update3, 100*(slot_three_speed+10));
+            handler.postDelayed(update3, slot_three_speed*100);
 
         }
     }
